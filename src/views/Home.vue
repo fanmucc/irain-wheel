@@ -1,9 +1,6 @@
 <template>
 <div>
-    <div class="topnav">
-        <div class="logo"></div>
-        <div class="menu"></div>
-    </div>
+    <top-nav></top-nav>
     <div class="banner">
         <h1>这是个UI框架</h1>
         <h2>哈哈哈</h2>
@@ -15,8 +12,12 @@
 </div>
 </template>
 <script lang="ts">
+import TopNav from '../components/TopNav'
 export default {
-    
+    name: 'Home',
+    components: {
+        TopNav
+    }
 }
 </script>
 
