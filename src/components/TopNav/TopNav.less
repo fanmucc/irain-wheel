@@ -1,5 +1,6 @@
 
 .irain-topnav {
+    position: relative;
     margin: 0;
     padding: 0;
     display: flex;
@@ -12,6 +13,12 @@
     background: red;
     font-size: 16px;
     font-weight: 400;
+    z-index: 1;
+    .collapsible {
+        position: absolute;
+        left: 40px;
+        user-select: none;
+    }
     & .menu {
         list-style: none;
         display: flex;
