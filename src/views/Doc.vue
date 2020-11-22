@@ -4,9 +4,9 @@
     <div class="content">
         <aside :style="{transform: isCollapsible ? 'translateX(-300px)' : ''}">边栏</aside>
         <main :style="{width: isCollapsible ? '100vw' : '', paddingLeft: isCollapsible ? '0px' : '300px'}">
-            <icon type="minus" size="50" color="red"/>
-            <icon/>
-            <icon/>
+            <icon type="minus" size="50" />
+            <hr>
+            <Button>按钮</Button>
             Tabs展示
             <hr>
             <Tabs>
@@ -22,7 +22,8 @@
 import TopNav from '../components/TopNav'
 import Tabs from '../components/Tabs.vue'
 import Tab from '../components/Tab.vue'
-import Icon from '../components/Icon.vue'
+import Icon from '../components/Icon'
+import Button from '../components/Button'
 import { ref } from 'vue'
 export default {
     name: 'Doc',
@@ -30,7 +31,8 @@ export default {
         TopNav,
         Tabs,
         Tab,
-        Icon
+        Icon,
+        Button
     },
     setup() {
         const isCollapsible = ref(false)
