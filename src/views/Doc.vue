@@ -3,17 +3,34 @@
     <TopNav collapsible :isCollapsible="isCollapsible" @on-collapsible="handleChangeStatus"> </TopNav>
     <div class="content">
         <aside :style="{transform: isCollapsible ? 'translateX(-300px)' : ''}">边栏</aside>
-        <main :style="{width: isCollapsible ? '100vw' : '', paddingLeft: isCollapsible ? '0px' : '300px'}">内容区</main>
+        <main :style="{width: isCollapsible ? '100vw' : '', paddingLeft: isCollapsible ? '0px' : '300px'}">
+            <icon type="minus" size="50" color="red"/>
+            <icon/>
+            <icon/>
+            Tabs展示
+            <hr>
+            <Tabs>
+                <Tab title="导航1">内容1</Tab>
+                <Tab title="导航2">内容2</Tab>
+            </Tabs>
+            
+        </main>
     </div>
 </div>
 </template>
 <script lang="ts">
 import TopNav from '../components/TopNav'
+import Tabs from '../components/Tabs.vue'
+import Tab from '../components/Tab.vue'
+import Icon from '../components/Icon.vue'
 import { ref } from 'vue'
 export default {
     name: 'Doc',
     components: {
-        TopNav
+        TopNav,
+        Tabs,
+        Tab,
+        Icon
     },
     setup() {
         const isCollapsible = ref(false)

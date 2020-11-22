@@ -2,7 +2,9 @@ import { createApp } from 'vue'
 import App from './App.vue'
 
 import './index.css'
-
+import './assets/css/index.less'
+import './assets/font/iconfont.js'
+import './assets/font/iconfont.css'
 import { createWebHashHistory, createRouter } from 'vue-router'
 
 import Home from './views/Home.vue'

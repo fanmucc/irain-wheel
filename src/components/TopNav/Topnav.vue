@@ -1,10 +1,10 @@
 <template>
     <div class="irain-topnav">
-        <span class="collapsible" v-if="collapsible" @click="handleChangeCollapsible">切换</span>
+        <span class="collapsible" v-if="collapsible && mobile" @click="handleChangeCollapsible">切换</span>
         <div>
             <span>Logo</span>
         </div>
-        <ul class="menu" v-show="mobile">
+        <ul class="menu" v-show="!mobile">
             <li class="menu-list"><span>菜单1</span></li>
             <li class="menu-list"><span>菜单2</span></li>
         </ul>
