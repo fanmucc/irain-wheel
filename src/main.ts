@@ -10,6 +10,7 @@ import { createWebHashHistory, createRouter } from 'vue-router'
 import Home from './views/Home.vue'
 import Doc from './views/Doc.vue'
 import Color from './views/color'
+import 'github-markdown-css';
 const history = createWebHashHistory()
 
 const router = createRouter({
@@ -30,7 +31,7 @@ const router = createRouter({
                 {
                     path: 'color',
                     component: Color
-                }
+                },
             ]
         }
     ]
