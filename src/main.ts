@@ -13,6 +13,11 @@ import Color from './views/color'
 import 'github-markdown-css';
 const history = createWebHashHistory()
 
+import { h } from 'vue';
+import Markdown from './components/Markdown.vue';
+import intro from './markdown/intro.md'
+const md = string => h(Markdown, { content: string, key: string })
+
 const router = createRouter({
     history: history,
     routes: [
@@ -30,7 +35,7 @@ const router = createRouter({
             children: [
                 {
                     path: 'color',
-                    component: Color
+                    component: md(intro)
                 },
             ]
         }
