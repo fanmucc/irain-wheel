@@ -18,6 +18,9 @@ import Markdown from './components/Markdown.vue';
 import intro from './markdown/intro.md'
 const md = string => h(Markdown, { content: string, key: string })
 
+// 引入page页面
+import buttonPage from './views/button'
+
 const router = createRouter({
     history: history,
     routes: [
@@ -37,6 +40,10 @@ const router = createRouter({
                     path: 'color',
                     component: md(intro)
                 },
+                {
+                    path: 'button',
+                    component: buttonPage
+                }
             ]
         }
     ]

@@ -16,10 +16,10 @@
                     <router-link to="/doc/color">颜色</router-link>
                 </li>
                 <li>
-                    <router-link to="/">Icon</router-link>
+                    <router-link to="/button">Icon</router-link>
                 </li>
                 <li>
-                    <router-link to="/">Button</router-link>
+                    <router-link to="/doc/button">Button</router-link>
                 </li>
             </ul>
         </aside>
