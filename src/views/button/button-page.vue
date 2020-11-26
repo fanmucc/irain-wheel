@@ -19,6 +19,16 @@
         <Button type="warning" round style="margin-left: 20px">warning</Button>
         <Button type="error" round style="margin-left: 20px">error</Button>
         <Button type="text" round style="margin-left: 20px">text</Button>
+        <hr>
+        <br><br>
+        <br>
+        <Button type="primary" icon="search" circle></Button>
+        <Button type="primary" icon="search">搜索</Button>
+
+
+        <Button type="primary" size="medium" round style="margin-left: 20px">primary</Button>
+        <Button type="info" round style="margin-left: 20px">info</Button>
+        <Button type="success" round style="margin-left: 20px">success</Button>
     </div>
 </template>
 <script lang="ts">

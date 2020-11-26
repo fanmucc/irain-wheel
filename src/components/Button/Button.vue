@@ -2,11 +2,14 @@
     <button type="button" :class="[
         'irain-btn',
         type ? 'irain-btn-' + type : '',
+        
         {
-            'is-round': round
+            'is-round': round,
+            'is-circle': circle
         }
     ]">
-        <slot></slot>
+        <i v-if="icon" :class="['iconfont', `icon-${icon}`]"></i>
+        <span v-if="$slots.default"><slot></slot></span>
     </button>
 </template>
 <script lang="ts">
@@ -15,6 +18,7 @@ import './button.less'
 
 import { PropType } from 'vue'
 type IrainButtonType = PropType<'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text' | 'default'>
+type ComponentSize = PropType<'' | 'large' | 'medium' | 'small' | 'mini' >
 export default {
     name: 'Button',
     props: {
@@ -33,11 +37,25 @@ export default {
                 ].includes(val)
             }
         },
-        round: Boolean
-        // size: {
-        //     type: String as PropType<ComponentSize>,
-        //     validator: isValidComponentSize
-        // }
+        icon: {
+            type: String,
+            default: ''
+        },
+        size: {
+            type: String as ComponentSize,
+            validator: (val: string) => {
+                return [
+                    '',
+                    'large',
+                    'medium',
+                    'small',
+                    'mini'
+                ].includes(val)
+            }
+        },
+        round: Boolean,
+        circle: Boolean,
+        
     }
 }
 </script>

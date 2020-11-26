@@ -2,6 +2,7 @@
 @import '../../assets/css/color.less';
 .irain-btn {
     display: inline-block;
+    line-height: 1;
     margin-bottom: 0;
     font-weight: 400;
     text-align: center;
@@ -12,9 +13,8 @@
     border: 1px solid transparent;
     white-space: nowrap;
     user-select: none;
-    height: 32px;
-    padding: 0 15px;
-    font-size: 14px;
+    padding: 12px 20px;
+    font-size: 1rem;
     border-radius: 4px;
     transition: color .2s linear,background-color .2s linear,border .2s linear,box-shadow .2s linear;
     color: @content-color;
@@ -192,4 +192,17 @@
 
 .is-round {
     border-radius: 20px;
+}
+
+.is-circle {
+    border-radius: 50%;
+    padding: 12px;
+}
+
+.irain-btn [class*=icon-]+span {
+    margin-left: 5px;
+}
+
+.irain-btn-medium {
+    padding: 10px 20px;
 }
