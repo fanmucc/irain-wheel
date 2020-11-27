@@ -2,12 +2,15 @@
     <button type="button" :class="[
         'irain-btn',
         type ? 'irain-btn-' + type : '',
-        
+        buttonSize ? 'irain-btn--' + buttonSize : '',
         {
             'is-round': round,
-            'is-circle': circle
-        }
-    ]">
+            'is-circle': circle,
+            'is-disabled': buttonDisabled
+        },
+    ]"
+    :disabled="buttonDisabled"
+    >
         <i v-if="icon" :class="['iconfont', `icon-${icon}`]"></i>
         <span v-if="$slots.default"><slot></slot></span>
     </button>
@@ -16,7 +19,7 @@
 // 引入css
 import './button.less' 
 
-import { PropType } from 'vue'
+import { computed, PropType } from 'vue'
 type IrainButtonType = PropType<'primary' | 'success' | 'warning' | 'danger' | 'info' | 'text' | 'default'>
 type ComponentSize = PropType<'' | 'large' | 'medium' | 'small' | 'mini' >
 export default {
@@ -55,7 +58,20 @@ export default {
         },
         round: Boolean,
         circle: Boolean,
+        disabled: Boolean
         
+    },
+    setup(props, context) {
+        const buttonSize = computed(() => {
+            return props.size
+        })
+        const buttonDisabled = computed(() => {
+            return props.disabled
+        })
+        return {
+            buttonSize,
+            buttonDisabled
+        }
     }
 }
 </script>
